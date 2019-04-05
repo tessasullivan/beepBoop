@@ -11,18 +11,29 @@
   <body>
     <div class="container">
       <h1>Counting Beep Boop Style</h1>
-
       <form id="beepBoopForm">
-        <p id="intro">Enter a number and we'll count for you in a super special way!</p>
-        <h3 id="goAgain">Would you like to count again?</h3>
-
-        <div class="form-group">
-          <label for="input"></label>
-          <input id="input" type="text" placeholder="Enter a number">
+        <div class="row">
+          <div class="col-8">
+              <p id="intro">Enter a number and we'll count for you in a super special way!</p>
+              <h3 id="goAgain">Would you like to count again?</h3>
+          </div>
         </div>
-
-        <button type="submit" class="btn1">Submit</button>
+        <div class="row">
+          <div class="col-6">
+            <div class="form-group">
+              <label for="input"></label>
+              <input id="input" type="text" placeholder="Enter a number">
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <button type="submit" class="btn1" id="countAscending">Count Up</button>
+            <button type="submit" class="btn1" id="countDescending">Count Down</button>
+          </div>
+        </div>
       </form>
+
 
       <div id="result">
         <p>Here's how we count to <span class="input"></span></p>

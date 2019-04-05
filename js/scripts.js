@@ -1,4 +1,4 @@
-function replaceNumbers(input) {
+function replaceNumbers(order, input) {
   var output = [];
   var textFor1 = "Beep!";
   var textFor2 = "Boop!";
@@ -21,11 +21,27 @@ function replaceNumbers(input) {
       output.push(i);
     }
   }
- return output;
+  if ( order === 'descending') {
+    output.reverse();
+  }
+return output;
 }
 
 
 $(document).ready(function() {
+  var order;
+
+  // Determine which submit button was pushed
+  $('#countAscending, #countDescending').click(function () {
+     if (this.id === 'countAscending') {
+        order = 'ascending';
+     }
+     else if (this.id === 'countDescending') {
+        order = 'descending';
+     }
+  });
+
+  // Now let's actually do some stuff
   $("#beepBoopForm").submit(function(event) {
     event.preventDefault();
 
@@ -34,7 +50,8 @@ $(document).ready(function() {
     if ($('input').val() === "" || parseInt($('input').val()) < 0 || isNaN(parseInt($('input').val()))) {
       alert ("Please enter a positive number or zero.");
     } else {
-      var output = replaceNumbers(input);
+
+      var output = replaceNumbers(order, input);
 
       // Hide the intro paragraph
       $('#intro').hide();
@@ -42,18 +59,22 @@ $(document).ready(function() {
       // Replace the input and output fields on the results div with their values
       $(".input").text(input);
 
+      // Clear previous results (if any) and empty the input field
+
+      $('#result').empty();
+      $("#input").val("");
+
+      // Set up and create a list for each 'number'
       $('#result').append("<ul></ul>");
       output.forEach(function(item) {
         $('#result ul').append('<li>' + item + '</li>');
       });
 
-      // Empty the input field
-      $("#input").val("");
+
 
       // Display the results before displaying the form again
       $("#beepBoopForm").before($("#result").show());
       $("#goAgain").show();
-
 
     }
   });
