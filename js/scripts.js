@@ -35,15 +35,22 @@ $(document).ready(function() {
       alert ("Please enter a positive number or zero.");
     } else {
       var output = replaceNumbers(input);
-//      console.log (output);
 
-
-//      $("#beepBoopForm").hide();
-//      $("#beepBoopForm").
+      // Hide the intro paragraph
       $('#intro').hide();
+
+      // Replace the input and output fields on the results div with their values
       $(".input").text(input);
       $(".output").text(output);
-      $("#result").show();
+
+      // Empty the input field
+      $("#input").val("");
+
+      // Display the results before displaying the form again
+      $("#beepBoopForm").before($("#result").show());
+      $("#goAgain").show();
+
+
     }
   });
 });
