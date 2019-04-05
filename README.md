@@ -12,7 +12,7 @@ Takes a number from a user and returns a range of numbers from 0 to the user inp
 
 The above rules are listed in order from least to most important.  The first exception should apply unless the second exception does, and the same with the second and third.
 
-[Counting Beep Boop Style]: https://tessasullivan.github.io/beepBoop/
+[Counting Beep Boop Style] (https://tessasullivan.github.io/beepBoop/)
 
 ## Specifications
 
