@@ -21,7 +21,7 @@ function replaceNumbers(input) {
       output.push(i);
     }
   }
-  return output.join(', ');
+ return output;
 }
 
 
@@ -41,7 +41,11 @@ $(document).ready(function() {
 
       // Replace the input and output fields on the results div with their values
       $(".input").text(input);
-      $(".output").text(output);
+
+      $('#result').append("<ul></ul>");
+      output.forEach(function(item) {
+        $('#result ul').append('<li>' + item + '</li>');
+      });
 
       // Empty the input field
       $("#input").val("");
