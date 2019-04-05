@@ -35,9 +35,11 @@ $(document).ready(function() {
   $('#countAscending, #countDescending').click(function () {
      if (this.id === 'countAscending') {
         order = 'ascending';
+        $(".direction").text("to");
      }
      else if (this.id === 'countDescending') {
         order = 'descending';
+        $(".direction").text("down from");
      }
   });
 
@@ -61,7 +63,7 @@ $(document).ready(function() {
 
       // Clear previous results (if any) and empty the input field
 
-      $('#result').empty();
+      $('#result ul').remove();
       $("#input").val("");
 
       // Set up and create a list for each 'number'
@@ -69,8 +71,6 @@ $(document).ready(function() {
       output.forEach(function(item) {
         $('#result ul').append('<li>' + item + '</li>');
       });
-
-
 
       // Display the results before displaying the form again
       $("#beepBoopForm").before($("#result").show());
