@@ -1,5 +1,8 @@
 function replaceNumbers(input) {
   var output = [];
+  var textFor1 = "Beep!";
+  var textFor2 = "Boop!";
+  var textFor3 = "I'm sorry, Dave. I'm afraid I can't do that.";
 
   // Loop from 0 to inputted number, replacing
   // numbers with a 1 with Beep
@@ -9,11 +12,11 @@ function replaceNumbers(input) {
   for (var i = 0; i <= input; i++) {
     var splitNum = i.toString().split("");
     if (splitNum.includes("3")) {
-      output.push("I'm sorry, Dave. I'm afraid I can't do that.");
+      output.push(textFor3);
     } else if (splitNum.includes("2")) {
-      output.push("Boop");
+      output.push(textFor2);
     } else if (splitNum.includes("1")) {
-      output.push("Beep");
+      output.push(textFor1);
     } else {
       output.push(i);
     }
@@ -32,12 +35,13 @@ $(document).ready(function() {
       alert ("Please enter a positive number or zero.");
     } else {
       var output = replaceNumbers(input);
-      console.log (output);
+//      console.log (output);
 
 
-      $("#beepBoopForm").hide();
-
-//      $(".input").text(input);
+//      $("#beepBoopForm").hide();
+//      $("#beepBoopForm").
+      $('#intro').hide();
+      $(".input").text(input);
       $(".output").text(output);
       $("#result").show();
     }
