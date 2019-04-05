@@ -15,13 +15,16 @@ h1 {
   font-family: fantasy;
 }
 .btn1 {
-  background-color:  #4c00e6;
+  background-color: #7733ff;
   color: white;
   text-align: center;
   display: inline-block;
   cursor: pointer;
   border-radius: 8px;
   padding: 6px 18px;
+}
+.btn1:hover {
+  background-color:  #4c00e6;
 }
 input {
   margin-left: 20px;

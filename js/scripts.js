@@ -49,6 +49,7 @@ $(document).ready(function() {
 
     var input = $("#input").val();
 
+    // Check for valid input
     if ($('input').val() === "" || parseInt($('input').val()) < 0 || isNaN(parseInt($('input').val()))) {
       alert ("Please enter a positive number or zero.");
     } else {
@@ -58,11 +59,10 @@ $(document).ready(function() {
       // Hide the intro paragraph
       $('#intro').hide();
 
-      // Replace the input and output fields on the results div with their values
+      // Replace the input field on the results div with its value
       $(".input").text(input);
 
       // Clear previous results (if any) and empty the input field
-
       $('#result ul').remove();
       $("#input").val("");
 
